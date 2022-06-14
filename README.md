@@ -14,12 +14,14 @@ Another potential method is using recurrent neural network with Long-Short Term 
 Both methods would be performed with Scikit-learn and PyTorch.
 
 Our models would be evaluated based on its accuracy in comparison with the actual mutation history of the Spike Protein of Covid-19. The accuracy is measured by determining the percentage of exact matching in the predicted sequence with the actual sequence.
+
 ## Links
 - [Timeline](https://docs.google.com/spreadsheets/d/1nTeB63nvPim6VD8VA3zFnEYTLGWwTaIt4XnW-lwcBYs/edit?usp=drivesdk)
 - Video Presentation
+
 ## Works Cited
-de Hoffer, Adele, et al. “Variant-Driven Early Warning via Unsupervised Machine Learning Analysis of Spike Protein Mutations for COVID-19.” Nature News, Nature Publishing Group, 3 June 2022, https://www.nature.com/articles/s41598-022-12442-8. 
-Deif, M. A., Solyman, A. A., Kamarposhti, M. A., Band, S. S., & Hammam, R. E. (2021). A deep bidirectional recurrent neural network for identification of SARS-COV-2 from viral genome sequences. Mathematical Biosciences and Engineering, 18(6), 8933–8950. https://doi.org/10.3934/mbe.2021440 
-Pathan, Refat Khan, et al. “Time Series Prediction of COVID-19 by Mutation Rate Analysis Using Recurrent Neural Network-Based LSTM Model.” Chaos, Solitons & Fractals, Pergamon, 13 June 2020, https://www.sciencedirect.com/science/article/pii/S0960077920304161. 
-Salama, Mostafa A., et al. “The Prediction of Virus Mutation Using Neural Networks and Rough Set Techniques - EURASIP Journal on Bioinformatics and Systems Biology.” SpringerLink, Springer International Publishing, 13 May 2016, https://link.springer.com/article/10.1186/s13637-016-0042-0. 
-Yin, Rui, et al. “Tempel: Time-Series Mutation Prediction of Influenza A Viruses via Attention-Based Recurrent Neural Networks.” OUP Academic, Oxford University Press, 30 Jan. 2020, https://academic.oup.com/bioinformatics/article/36/9/2697/5717964.
+- de Hoffer, Adele, et al. “Variant-Driven Early Warning via Unsupervised Machine Learning Analysis of Spike Protein Mutations for COVID-19.” Nature News, Nature Publishing Group, 3 June 2022, https://www.nature.com/articles/s41598-022-12442-8. 
+- Deif, M. A., Solyman, A. A., Kamarposhti, M. A., Band, S. S., & Hammam, R. E. (2021). A deep bidirectional recurrent neural network for identification of SARS-COV-2 from viral genome sequences. Mathematical Biosciences and Engineering, 18(6), 8933–8950. https://doi.org/10.3934/mbe.2021440 
+- Pathan, Refat Khan, et al. “Time Series Prediction of COVID-19 by Mutation Rate Analysis Using Recurrent Neural Network-Based LSTM Model.” Chaos, Solitons & Fractals, Pergamon, 13 June 2020, https://www.sciencedirect.com/science/article/pii/S0960077920304161. 
+- Salama, Mostafa A., et al. “The Prediction of Virus Mutation Using Neural Networks and Rough Set Techniques - EURASIP Journal on Bioinformatics and Systems Biology.” SpringerLink, Springer International Publishing, 13 May 2016, https://link.springer.com/article/10.1186/s13637-016-0042-0. 
+- Yin, Rui, et al. “Tempel: Time-Series Mutation Prediction of Influenza A Viruses via Attention-Based Recurrent Neural Networks.” OUP Academic, Oxford University Press, 30 Jan. 2020, https://academic.oup.com/bioinformatics/article/36/9/2697/5717964.
