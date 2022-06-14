@@ -17,3 +17,8 @@ Our models would be evaluated based on its accuracy in comparison with the actua
 ## Links
 - [Timeline](https://docs.google.com/spreadsheets/d/1nTeB63nvPim6VD8VA3zFnEYTLGWwTaIt4XnW-lwcBYs/edit?usp=drivesdk)
 - Video Presentation
+## Works Cited
+de Hoffer, Adele, et al. “Variant-Driven Early Warning via Unsupervised Machine Learning Analysis of Spike Protein Mutations for COVID-19.” Nature News, Nature Publishing Group, 3 June 2022, https://www.nature.com/articles/s41598-022-12442-8. 
+Pathan, Refat Khan, et al. “Time Series Prediction of COVID-19 by Mutation Rate Analysis Using Recurrent Neural Network-Based LSTM Model.” Chaos, Solitons & Fractals, Pergamon, 13 June 2020, https://www.sciencedirect.com/science/article/pii/S0960077920304161. 
+Salama, Mostafa A., et al. “The Prediction of Virus Mutation Using Neural Networks and Rough Set Techniques - EURASIP Journal on Bioinformatics and Systems Biology.” SpringerLink, Springer International Publishing, 13 May 2016, https://link.springer.com/article/10.1186/s13637-016-0042-0. 
+Yin, Rui, et al. “Tempel: Time-Series Mutation Prediction of Influenza A Viruses via Attention-Based Recurrent Neural Networks.” OUP Academic, Oxford University Press, 30 Jan. 2020, https://academic.oup.com/bioinformatics/article/36/9/2697/5717964.
