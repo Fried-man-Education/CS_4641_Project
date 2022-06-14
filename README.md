@@ -17,7 +17,7 @@ Our models would be evaluated based on its accuracy in comparison with the actua
 
 ## Links
 - [Timeline](https://docs.google.com/spreadsheets/d/1nTeB63nvPim6VD8VA3zFnEYTLGWwTaIt4XnW-lwcBYs/edit?usp=drivesdk)
-- Video Presentation
+- [Video Presentation](https://youtu.be/NMrNNl2xgSg)
 
 ## Works Cited
 - de Hoffer, Adele, et al. “Variant-Driven Early Warning via Unsupervised Machine Learning Analysis of Spike Protein Mutations for COVID-19.” Nature News, Nature Publishing Group, 3 June 2022, https://www.nature.com/articles/s41598-022-12442-8. 
