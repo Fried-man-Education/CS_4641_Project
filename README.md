@@ -1,27 +1,33 @@
-# Project Proposal
-Team 10's topic is an exploration into the use of machine learning to predict future mutations of the COVID-19 genome. As of June 14th, 2022, over 500 million people have contracted COVID-19. Of these people, over 6.2 million of them have died. With the death of loved ones, social isolation, and economic downturn, it is not a stretch to say that the vast majority of the world has been negatively impacted by the events of this pandemic. This exploration aims to provide a tool to researchers, warning to governments, and guide travelers about emerging variants all in order to save lives and be one step closer in ending the pandemic.
+# Midterm Report
+The Dataset used in the project is [****NIST Special Database 19****](https://www.nist.gov/srd/nist-special-database-19). The NIST dataset is the most commonly used dataset for handprinted document and character recognition, which includes over 800,000 images of hand-written characters from 3600 writers, with hand-checked classification. The dataset includes digits, upper case English characters, and lower case English Characters. All the images provided by NIST are in 28 pixels * 28 pixels format and grayscaled.
+
+The dataset chosen is a subset of the NIST database. The subset contains over 600,000 hand-written digits(0-9). The rows are each individual image (character), and the columns are each pixel of the image(28 * 28 = 785 columns). The dataset is split into 80% training and 20% testing using Sklearn’s train_test_split method and subsequently split into images and labels. The dataset is also randomly shuffled. 
+
+We then transformed the data from flattened 784 pixels to 2-D shape images 28 * 28 pixels. This is done using NumPy's reshape method, where the training images and testing images are reshaped into (1, 28, 28), with the 1 being the grayscaled color channel, and the two 28s being the image column pixel size and image row pixel size prospectively. Each pixel is then typecasted to float32, and divided by 255 for normalization. The training and testing labels are categorized in the one-hot encoding format using Keras.
 
 
-While there are few publications on Covid-19 mutation prediction using Machine Learning, the general field of viral mutation prediction using Machine Learning is well-researched by academia. In our method, we will incorporate the methodology used in general viral mutation prediction with the characteristics of COVID-19(SARS-CoV-2) genome. In this project, we define a mutation as the changes in the amino acid sequence in the Spike Protein of individual families of COVID-19 variant (de Hoffer et al., 2022). 
+We implemented Convolution Neural Networks as our main methodology. The model architecture we used is inspired by previous work done by He et al., 2016, and Yousef et al., 2020. Implementation is achieved using Tensorflow’s Keras.
 
-The dataset that will be used in this project is the National Center for Biotechnology Information(NCBI) . We will be NCBI’s genetic sequence of all families of Covid-19 variants and mutations and divide the dataset into two parts, with the first 80% for training and the last 20% for testing. 
+The first convolution is Conv2D, with 32 filters with kernel size 3 * 3.  The activation function we chose is ReLu(Rectified Linear Activation Function), and the input shape is (1, 28, 28), as defined in the data processing step.
+
+A second convolution is then added, with all hyperparameters being the same except that we used 64 filters in order to identify higher-level features. 
+
+Then, a MaxPooling2D layer is added to reduce the dimensionality while also highlighting the maximum value in each feature map.
+
+The result of the convolution is then flattened from 2-D to 1-D and passed into a hidden dense layer, with an input neuron size of 64 and an output neuron size of 10. 
+
+The following picture is the model architecture summary:
+
+![Screen%20Shot%202022-07-08%20at%2018 23 37](https://user-images.githubusercontent.com/17306743/179345093-3914ad03-3c17-428c-b78e-8af1785a4128.png)
+
+The model is then compiled. We chose categorical cross-entropy to be the loss function since this is a classification problem. By comparing the label given by CNN to the target label, we assign 1 for every correct classification and 0 for incorrect classification. We chose Adam for our activation function, and the metric we chose is Keras’ accuracy, which computes the frequency in which the predicted label matches the target label. For Model training, we chose the batch size to be 32 and epochs to be 10. 
 
 
-One potential method is using artificial neural network to identify changes within the genetic code in both DNA and RNA of the corresponding amino acid sequence. Every feature in the input is a nucleotide in the genetic sequence corresponding to a feature in the output. The training of the machine learning technique is fed with numerically encoded genetic sequences([A,C,G,T] -> [0,1,2,3]) of successive generations of the same Covid-19 family ​​(Salama et al., 2016). 
+The result of the model is measured with accuracy, as mentioned above. We compared the frequency in which the predicted label agrees with the target label. With our model, we have an accuracy of 98.84%. 
 
-Another potential method is using recurrent neural network with Long-Short Term Memory. The feature set would be similar to the method above, with the changes of splitting the sequence into overlapping k-meters of length 4 by the use of a sliding window. The layering of our model will follow the methodology used in Deif(2021) and Yin(2020). 
 
-Both methods would be performed with Scikit-learn and PyTorch.
+It is very encouraging that our current model resulted in high accuracy. However, considering this is only the subset of the dataset that contains only digits from 0 - 9, we should expect a lower accuracy when we incorporate all letters in the English alphabet. This would mean that we might need more convolution layers, and possibly Regularizing methods such as DropOut in our current model to prevent overfitting. 
+## References
+He, T., Huang, W., Qiao, Y., & Yao, J. (2016). Text-attentional convolutional neural network for scene text detection. *IEEE Transactions on Image Processing*, *25*(6), 2529–2541. https://doi.org/10.1109/tip.2016.2547588 
 
-Our models would be evaluated based on its accuracy in comparison with the actual mutation history of the Spike Protein of Covid-19. The accuracy is measured by determining the percentage of exact matching in the predicted sequence with the actual sequence.
-
-## Links
-- [Timeline](https://docs.google.com/spreadsheets/d/1nTeB63nvPim6VD8VA3zFnEYTLGWwTaIt4XnW-lwcBYs/edit?usp=drivesdk)
-- [Video Presentation](https://youtu.be/NMrNNl2xgSg)
-
-## Works Cited
-- de Hoffer, Adele, et al. “Variant-Driven Early Warning via Unsupervised Machine Learning Analysis of Spike Protein Mutations for COVID-19.” Nature News, Nature Publishing Group, 3 June 2022, https://www.nature.com/articles/s41598-022-12442-8. 
-- Deif, M. A., Solyman, A. A., Kamarposhti, M. A., Band, S. S., & Hammam, R. E. (2021). A deep bidirectional recurrent neural network for identification of SARS-COV-2 from viral genome sequences. Mathematical Biosciences and Engineering, 18(6), 8933–8950. https://doi.org/10.3934/mbe.2021440 
-- Pathan, Refat Khan, et al. “Time Series Prediction of COVID-19 by Mutation Rate Analysis Using Recurrent Neural Network-Based LSTM Model.” Chaos, Solitons & Fractals, Pergamon, 13 June 2020, https://www.sciencedirect.com/science/article/pii/S0960077920304161. 
-- Salama, Mostafa A., et al. “The Prediction of Virus Mutation Using Neural Networks and Rough Set Techniques - EURASIP Journal on Bioinformatics and Systems Biology.” SpringerLink, Springer International Publishing, 13 May 2016, https://link.springer.com/article/10.1186/s13637-016-0042-0. 
-- Yin, Rui, et al. “Tempel: Time-Series Mutation Prediction of Influenza A Viruses via Attention-Based Recurrent Neural Networks.” OUP Academic, Oxford University Press, 30 Jan. 2020, https://academic.oup.com/bioinformatics/article/36/9/2697/5717964.
+Yousef, M., Hussain, K. F., & Mohammed, U. S. (2020). Accurate, data-efficient, unconstrained text recognition with convolutional neural networks. *Pattern Recognition*, *108*, 107482. https://doi.org/10.1016/j.patcog.2020.107482
