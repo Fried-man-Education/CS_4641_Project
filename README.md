@@ -33,12 +33,16 @@ The following picture is the model architecture summary:
 
 The model is then compiled. We chose categorical cross-entropy to be the loss function since this is a classification problem. By comparing the label given by CNN to the target label, we assign 1 for every correct classification and 0 for incorrect classification. We chose Adam for our activation function, and the metric we chose is Keras’ accuracy, which computes the frequency in which the predicted label matches the target label. We experimented with different hyperparameters, and found that batch size of 32 and epochs of 20 yield the best result without sacrificing runtime.
 
-### Resnet50, VGG16, DenseNet121 and InceptionV3
-From reviewing literature in the area of handwritten recognition, we found several other models that are commonly used. Studies done by Aneja & Aneja and Pramanik & Bag found that Resnet50, VGG16, DenseNet121 and InceptionV3 are top performing model. We therefore implemented the models in our project to compare to the CNN model that we have constructed. The models are implemented using keras' application library, and compiled using the same metrics as our model, with the categorical cross-entropy loss, adam optimizer and the same accuracy metrics. 
+### Resnet50, VGG16, and InceptionV3
+From reviewing literature in the area of handwritten recognition, we found several other models that are commonly used. Studies done by Aneja & Aneja and Pramanik & Bag found that Resnet50, VGG16, and InceptionV3 are top performing model. We therefore implemented the models in our project to compare to the CNN model that we have constructed. The models are implemented using keras' application library, and compiled using the same metrics as our model, with the categorical cross-entropy loss, adam optimizer and the same accuracy metrics. 
 
 ## Results and Discussion
-
+The following plot is generated from the test accuracy generated from each model:
 ![Screen Shot 2022-08-02 at 07 42 30](https://user-images.githubusercontent.com/83091928/182366354-bb4e60e1-9790-42db-b5b7-e2d774703654.png)
+The simple CNN model performed poorly, only reaching an accuracy of 11.63%. Our analysis indicates that while a similar model performed well in digit-onyl recognition, the model fails to perform well in 
+The Resnet50, surprisingly, did not perform well either, with only an accuracy of 30.32%.
+The VGG16 model performed moderately, with an accuracy of 60.19%.
+The InceptionV3 model performed the best, with an accuracy of 75.92%.
 
 ## Conclusion
 
