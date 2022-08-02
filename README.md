@@ -46,6 +46,7 @@ Our simple CNN model suffered from underfitting when applied to dataset with 62 
 
 ## Conclusion
 
+While our models weren't perfect in accuracy, they provided a series of realworld solutions to an important problem. There is a lot of room for tweaking on our models to squeeze out better results. This exploration provided the group with a route of model experience to test ourselves in. Overall, the project is a succesful step forward.
 
 ## References
 Aneja, N., &amp; Aneja, S. (2019). Transfer learning using CNN for handwritten devanagari character recognition. 2019 1st International Conference on Advances in Information Technology (ICAIT). https://doi.org/10.1109/icait47043.2019.8987286 
