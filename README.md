@@ -1,14 +1,17 @@
 # Midterm Report
+## Introduction/Background
+## Problem Definition
 This project is an exploration of machine learning as a tool to convert handwriting into ASCII characters for data processing in the real world. Despite the best efforts of Silicon Valley, not everything is digital. We still utilize real world documents as a means of tracking very important information. This information usually needs to be processed in a database or backed up to safeguard the data. Important usecases for this project include, but are certainly not limited to, the healthcare, pharmecuticals, insurance, and banking industries of the world. Millions upon millions of legal documents are created everyday that need to be processed at rates that only pure automation can make feasible. If these documents are failed to be processed in time or are improperly processed, they can lead to a multitude of critical issues for organizations and individuals. This exploration aims to help safeguard and provide an additional tool of measurement for these kinds of documents.
 
-
+## Data Collection
 The Dataset used in the project is [**NIST Special Database 19**](https://www.nist.gov/srd/nist-special-database-19). The NIST dataset is the most commonly used dataset for handprinted document and character recognition, which includes over 800,000 images of hand-written characters from 3600 writers, with hand-checked classification. The dataset includes digits, upper case English characters, and lower case English Characters. All the images provided by NIST are in 28 pixels by 28 pixels format and grayscaled.
 
 The dataset chosen is a subset of the NIST database. The subset contains over 600,000 hand-written digits(0-9). The rows are each individual image (character), and the columns are each pixel of the image(28 * 28 = 785 columns). The dataset is split into 80% training and 20% testing using Sklearn’s train_test_split method and subsequently split into images and labels. The dataset is also randomly shuffled. 
 
 We then transformed the data from flattened 784 pixels to 2-D shape images 28 * 28 pixels. This is done using NumPy's reshape method, where the training images and testing images are reshaped into (1, 28, 28), with the 1 being the grayscaled color channel, and the two 28s being the image column pixel size and image row pixel size prospectively. Each pixel is then typecasted to float32, and divided by 255 for normalization. The training and testing labels are categorized in the one-hot encoding format using Keras.
 
-
+## Methods
+### Simple Convolution Neural Networks
 We implemented Convolution Neural Networks as our main methodology. The model architecture we used is inspired by previous work done by He et al., 2016, and Yousef et al., 2020. Implementation is achieved using Tensorflow’s Keras.
 
 The first convolution is Conv2D, with 32 filters with kernel size 3 * 3.  The activation function we chose is ReLu(Rectified Linear Activation Function), and the input shape is (1, 28, 28), as defined in the data processing step.
