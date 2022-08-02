@@ -38,6 +38,12 @@ Our results show that DenseNet121 outperformed all the other models, yielding an
 
 ## Discussion
 
+Increase complexity and depth in neural networks for complicated classification is widely adopted. While for some cases fewer layer architecutre could sometime achieve similar results, in the case of our project, we found that the 121-layer DenseNet performed the best when classifying 62 classes of handwritten characters and digits. This argument is supported by also the fact that the simple CNN architecutre performed the worst out of all the models. 
+
+However, we also see that InceptionV3 model performed similar to that of DenseNet 121. With the use of spatial factorization and efficient grid size reduction, InceptionV3 is able to achieve similar accuracy while having a significanly less complicated model compare to DenseNet 121. Arguments can be made for a tradeoff between accuracy and computational complexity. 
+
+Our simple CNN model suffered from underfitting when applied to dataset with 62 classes, as we can see from the training accuracy plot. While it performed well when classifying only 10 digits, with a more complicated 62-class classification, the model is simply not able to capture the relationship between the input pixels and target labels. 
+
 ## Conclusion
 
 
