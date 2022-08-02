@@ -14,7 +14,7 @@ In the midterm checkpoint, we applied a simple CNN model on a subset of the data
 ![Screen%20Shot%202022-07-08%20at%2018 23 37](https://user-images.githubusercontent.com/17306743/179345093-3914ad03-3c17-428c-b78e-8af1785a4128.png)
 
 However, when the same model is applied to the dataset with digits, uppercase letters and lowercase letters, the model underperformed significantly. Therefore, we increases the complexity of our CNN model, with 6 convolution layers. Corresponding measures to combat overfitting is also implemented using dropout and batch normalization. A fully connected layer is applied in the end. The model summary is as follows:
-[ ] insert model summary of simple model here
+[] insert model summary of simple model here
 
 We implemented Convolution Neural Networks as our main methodology. The model architecture we used is inspired by previous work done by He et al., 2016, and Yousef et al., 2020. Implementation is achieved using Tensorflow’s Keras.
 
