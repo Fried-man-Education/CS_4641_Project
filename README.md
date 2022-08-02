@@ -37,7 +37,7 @@ The model is then compiled. We chose categorical cross-entropy to be the loss fu
 From reviewing literature in the area of handwritten recognition, we found several other models that are commonly used. Studies done by Aneja & Aneja and Pramanik & Bag found that Resnet50, VGG16, DenseNet121 and InceptionV3 are top performing model. We therefore implemented the models in our project to compare to the CNN model that we have constructed. The models are implemented using keras' application library, and compiled using the same metrics as our model, with the categorical cross-entropy loss, adam optimizer and the same accuracy metrics. 
 
 ## Results and Discussion
-
+![results](https://user-images.githubusercontent.com/83091928/182366102-7f1f59e0-5e96-4d8b-9536-50faf225360a.jpg)
 
 ## Conclusion
 
