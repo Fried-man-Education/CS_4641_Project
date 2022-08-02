@@ -14,22 +14,11 @@ In the midterm checkpoint, we applied a simple CNN model on a subset of the data
 
 ![Screen%20Shot%202022-07-08%20at%2018 23 37](https://user-images.githubusercontent.com/17306743/179345093-3914ad03-3c17-428c-b78e-8af1785a4128.png)
 
-However, when the same model is applied to the dataset with digits, uppercase letters and lowercase letters, the model underperformed significantly. Therefore, we increases the complexity of our CNN model, with 6 convolution layers. Corresponding measures to combat overfitting is also implemented using dropout and batch normalization. A fully connected layer is applied in the end. The model summary is as follows:
-[] insert model summary of simple model here
+However, when the same model is applied to the dataset with digits, uppercase letters and lowercase letters, the model underperformed significantly. Therefore, we increases the complexity of our CNN model, with 6 convolution layers. Corresponding measures to combat overfitting are also implemented using dropout and batch normalization. A fully connected layer is applied in the end. The model summary is as follows:
 
-We implemented Convolution Neural Networks as our main methodology. The model architecture we used is inspired by previous work done by He et al., 2016, and Yousef et al., 2020. Implementation is achieved using Tensorflow’s Keras.
+![Screen Shot 2022-08-02 at 08 03 51](https://user-images.githubusercontent.com/83091928/182370250-86b27b3c-fc8f-42d6-8383-c9cf9ba174e1.png)
 
-The first convolution is Conv2D, with 32 filters with kernel size 3 * 3.  The activation function we chose is ReLu(Rectified Linear Activation Function), and the input shape is (1, 28, 28), as defined in the data processing step.
 
-A second convolution is then added, with all hyperparameters being the same except that we used 64 filters in order to identify higher-level features. 
-
-Then, a MaxPooling2D layer is added to reduce the dimensionality while also highlighting the maximum value in each feature map.
-
-The result of the convolution is then flattened from 2-D to 1-D and passed into a hidden dense layer, with an input neuron size of 64 and an output neuron size of 10. 
-
-The following picture is the model architecture summary:
-
-![Screen%20Shot%202022-07-08%20at%2018 23 37](https://user-images.githubusercontent.com/17306743/179345093-3914ad03-3c17-428c-b78e-8af1785a4128.png)
 
 The model is then compiled. We chose categorical cross-entropy to be the loss function since this is a classification problem. By comparing the label given by CNN to the target label, we assign 1 for every correct classification and 0 for incorrect classification. We chose Adam for our activation function, and the metric we chose is Keras’ accuracy, which computes the frequency in which the predicted label matches the target label. We experimented with different hyperparameters, and found that batch size of 32 and epochs of 20 yield the best result without sacrificing runtime.
 
