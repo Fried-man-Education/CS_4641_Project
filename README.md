@@ -18,18 +18,27 @@ However, when the same model is applied to the dataset with digits, uppercase le
 
 ![Screen Shot 2022-08-02 at 08 03 51](https://user-images.githubusercontent.com/83091928/182370250-86b27b3c-fc8f-42d6-8383-c9cf9ba174e1.png)
 
-We chose categorical cross-entropy to be the loss function since this is a classification problem. By comparing the label given by CNN to the target label, we assign 1 for every correct classification and 0 for incorrect classification. We chose Adam for our activation function, and the metric we chose is Keras’ accuracy, which computes the frequency in which the predicted label matches the target label. We experimented with different hyperparameters, and found that batch size of 32 and epochs of 20 yield the best result without sacrificing runtime.
+We chose categorical cross-entropy to be the loss function since this is a classification problem. By comparing the label given by CNN to the target label, we assign 1 for every correct classification and 0 for incorrect classification. We chose Adam for our activation function, and the metric we chose is Keras’ accuracy, which computes the frequency in which the predicted label matches the target label. We experimented with different hyperparameters, and found that batch size of 32 and epochs of 20 yield the best result without sacrificing runtime. Higher batch size than 32 lead to generalization and lower accuracy, 
 
 ### Resnet50, VGG16, and InceptionV3
-Our initial observation from the CNN model above did not show promising results. After reviewing relevant literatures in the area of handwritten recognition, we found several other models that are commonly used. Studies done by Aneja & Aneja and Pramanik & Bag found that Resnet50, VGG16, and InceptionV3 are top performing model. We therefore implemented the models in our project to compare to the CNN model that we have constructed. The models are implemented using Keras' application library, and compiled using the same hyperparameters and metrics as the previous CNN model, with the categorical cross-entropy loss, adam optimizer and the same accuracy metrics. 
+Our initial observation from the CNN model above did not show promising results. After reviewing relevant literatures in the area of handwritten recognition, we found several other models that are commonly used. Studies done by Aneja & Aneja and Pramanik & Bag found that Resnet50, VGG16, and InceptionV3 are top performing model. We therefore implemented the models in our project to compare to the CNN model that we have constructed. The models are implemented using Keras' application library, and compiled using the same metrics as the previous CNN model, with the categorical cross-entropy loss, adam optimizer and the same accuracy metrics. 
 
 ## Results and Discussion
-The following plot is generated from the test accuracy generated from each model:
+The following plots shows the training accurracy comparison, training loss comparison, testing accuracy comparison, and testing loss comparison:
 
-![Screen Shot 2022-08-02 at 08 09 05](https://user-images.githubusercontent.com/83091928/182371171-51c5cbea-6bb0-401e-9b72-c2a4295bdd73.png)
+![Screen Shot 2022-08-02 at 08 22 49](https://user-images.githubusercontent.com/83091928/182373546-ede009b1-59cf-443e-ab3a-76167d897b39.png)
+
+![Screen Shot 2022-08-02 at 08 23 15](https://user-images.githubusercontent.com/83091928/182373611-33669123-4618-4bf1-8df6-fe540635f39f.png)
+
+![Screen Shot 2022-08-02 at 08 23 24](https://user-images.githubusercontent.com/83091928/182373637-d6685390-19af-4a91-b6ae-0bc1e61daf82.png)
+
+![Screen Shot 2022-08-02 at 08 23 33](https://user-images.githubusercontent.com/83091928/182373675-905fc082-6ee6-4643-ba16-e8db4b2d3db8.png)
+
+
 
 Our results show that InceptionV3 outperformed all the other models. 
-The simple CNN model performed poorly, only reaching an accuracy of 11.63%. Our analysis indicates that while a similar model performed well in digit-onyl recognition, the model fails to perform well in 
+The simple CNN model performed poorly, only reaching an accuracy of 11.63%. While the simple CNN model performed well in digit-only recognition, the model fails with digits, uppercase and lowercase letters. This is mainly due to the fact that 
+Our analysis indicates that while a similar model performed well in digit-onyl recognition, the model fails to perform well in 
 The Resnet50, surprisingly, did not perform well either, with only an accuracy of 30.32%.
 The VGG16 model performed moderately, with an accuracy of 60.19%.
 The InceptionV3 model performed the best, with an accuracy of 75.92%.
