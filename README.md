@@ -12,7 +12,7 @@ Due to the limited computational power the team has available, we only used a su
 ### Simple Convolution Neural Networks
 In the midterm checkpoint, we applied a simple CNN model on a subset of the data that only contained 0 - 9 digits. We observed an accuracy of 98.84%. 
 
-![Screen%20Shot%202022-07-08%20at%2018 23 37](https://user-images.githubusercontent.com/17306743/179345093-3914ad03-3c17-428c-b78e-8af1785a4128.png)
+
 
 However, when the same model is applied to the dataset with digits, uppercase letters and lowercase letters, the model underperformed significantly. Therefore, we increases the complexity of our CNN model, with 6 convolution layers. Corresponding measures to combat overfitting is also implemented using dropout and batch normalization. A fully connected layer is applied in the end. The model summary is as follows:
 [] insert model summary of simple model here
@@ -37,7 +37,8 @@ The model is then compiled. We chose categorical cross-entropy to be the loss fu
 From reviewing literature in the area of handwritten recognition, we found several other models that are commonly used. Studies done by Aneja & Aneja and Pramanik & Bag found that Resnet50, VGG16, DenseNet121 and InceptionV3 are top performing model. We therefore implemented the models in our project to compare to the CNN model that we have constructed. The models are implemented using keras' application library, and compiled using the same metrics as our model, with the categorical cross-entropy loss, adam optimizer and the same accuracy metrics. 
 
 ## Results and Discussion
-![results](https://user-images.githubusercontent.com/83091928/182366102-7f1f59e0-5e96-4d8b-9536-50faf225360a.jpg)
+
+![Screen Shot 2022-08-02 at 07 42 30](https://user-images.githubusercontent.com/83091928/182366354-bb4e60e1-9790-42db-b5b7-e2d774703654.png)
 
 ## Conclusion
 
