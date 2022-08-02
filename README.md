@@ -34,7 +34,12 @@ The following picture is the model architecture summary:
 The model is then compiled. We chose categorical cross-entropy to be the loss function since this is a classification problem. By comparing the label given by CNN to the target label, we assign 1 for every correct classification and 0 for incorrect classification. We chose Adam for our activation function, and the metric we chose is Keras’ accuracy, which computes the frequency in which the predicted label matches the target label. We experimented with different hyperparameters, and found that batch size of 32 and epochs of 20 yield the best result without sacrificing runtime.
 
 ### Resnet50, VGG16, DenseNet121 and InceptionV3
-From reviewing literature in the area of handwritten recognition, we found several other models that are commonly used. Several models stood out to be the most commonly studied: Resnet50, VGG16, DenseNet121 and InceptionV3. (Aneja & Aneja, 2019), (Pramanik & Bag, 2021)
+From reviewing literature in the area of handwritten recognition, we found several other models that are commonly used. Studies done by Aneja & Aneja and Pramanik & Bag found that Resnet50, VGG16, DenseNet121 and InceptionV3 are top performing model. We therefore implemented the models in our project to compare to the CNN model that we have constructed. The models are implemented using keras' application library. 
+
+## Results and Discussion
+
+
+## Conclusion
 
 
 ## References
